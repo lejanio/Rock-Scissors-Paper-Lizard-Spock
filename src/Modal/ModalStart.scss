@@ -1,0 +1,100 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  gap: 20px;
+}
+
+.modal.active {
+  transform: scale(1)
+}
+
+.modal {
+
+}
+
+.modal__content-one {
+  background-color: #F5E6CC;
+  color: #14A76C;
+  width: 40%;
+  margin: 10px auto 10px 20px;
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+.modal__content-two {
+  width: 70%;
+  min-width: 400px;
+  margin: 0 20px 10px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #F5E6CC;
+  color: #14A76C;
+  //color: #C3073F;
+  //background-color: rgb(255, 214, 226);
+  //color: rgba(0, 0, 0, 0.90);
+}
+
+.heading {
+  font-size: 1.5rem;
+}
+
+.heading--introduction {
+  font-size: 1rem;
+}
+
+.subheading {
+  font-size: 1.255rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.paragraph__item {
+  margin: 0 0 0 30px;
+  //text-align: justify;
+}
+
+.character--container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.character {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.character-image {
+  height: 100px;
+  border-radius: 55%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+    outline: 3px solid gold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: outline-width 0.3s;
+  }
+
+  &:active {
+    outline: 5px solid gold;
+    transition: outline-width 0.1s;
+
+  }
+}

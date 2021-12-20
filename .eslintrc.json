@@ -28,7 +28,9 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "jsx-a11y/label-has-associated-control": "off",
         "no-use-before-define": "off",
+        "no-param-reassign": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/button-has-type": "off",
         "react/require-default-props": "off",

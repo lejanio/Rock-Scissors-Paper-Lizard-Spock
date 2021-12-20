@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;400;700&display=swap');
+
 .App {
   text-align: center;
+  background-image: url('http://localhost:3000/background_1.png' );
+  font-family: 'BioRhyme', serif;
 }
 
 .App-logo {
@@ -13,8 +17,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App-container {
+  background-color: rgba(40, 44, 52, 0.42);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +39,91 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  display: grid;
+  gap: 15px;
+  color: #FCCD04;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: left;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 10px;
+  gap: 5px;
+  color: #FFE400;
+}
+
+.hero-section--name {
+  padding-left: 10px;
+}
+
+.radio {
+  display: none;
+}
+
+.symbols {
+  display: flex;
+  justify-content: center;
+  //padding: 20px;
+  gap: 60px;
+}
+
+.symbol-container {
+  height: 175px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.chosenSymbol {
+  height: 125px;
+  border-radius: 50%;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+
+  &:active {
+    transition: height 0.2s;
+    height: 135px;
+  }
+}
+
+.character-image--cropper {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+
+  box-shadow:
+          0 0 4px 2px #e3e3e3,
+          0 0 5px 3px rgba(255, 215, 0, 1),
+          0 0 7px 4px rgb(6, 131, 110);
+}
+
+.chosen-character-image {
+  display: inline;
+  margin: 0 auto;
+  height: 155%;
+  position: absolute;
+  top: -10%;
+  right: -40%;
+  width: auto;
+  //horizon: -500%;
+    //height: 200px;
+    //border-radius: 55%;
+    //box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    //opacity: 1;
 }
