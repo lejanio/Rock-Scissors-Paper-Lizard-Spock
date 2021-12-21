@@ -145,12 +145,17 @@ const App = () => {
             </div>
           </div>
           <div className="symbols">
-            {pcChoice !== undefined && (
-            <div
-              key={pcChoice.name}
-            >
-              <img src={pcChoice.image} alt="{item}" className="chosen-symbol chosen-symbol--pc" />
-            </div>
+            {pcChoice === undefined ? (
+              <div
+                className="pc-choice-container"
+              />
+            ) : (
+              <div
+                key={pcChoice.name}
+                className="pc-choice-container"
+              >
+                <img src={pcChoice.image} alt="{item}" className="chosen-symbol chosen-symbol--pc" />
+              </div>
             )}
           </div>
           <div className="symbols">
