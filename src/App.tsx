@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { useAppSelector, useAppDispatch } from './state/hooks';
 import {
@@ -94,7 +93,7 @@ const App = () => {
         increaseComputerScore();
       }
     }
-  }, [gamesPlayed]);
+  }, [pcChoice]);
 
   useEffect(() => {
     if (score.player >= 3 || score.computer >= 3) {
