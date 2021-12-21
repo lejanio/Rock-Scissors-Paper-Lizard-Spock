@@ -38,8 +38,11 @@ const ModalEnd = () => {
         >
           Yeah, sure
         </Button>
+        <div className="credits">
+          <span>Icon credits: https://github.com/JLChamberlain/RPSLS</span>
+          <span>Character credits: http://www.cescgrane.com</span>
+        </div>
       </div>
-
     </div>
   );
 };

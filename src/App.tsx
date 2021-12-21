@@ -33,7 +33,7 @@ const App = () => {
   const modalEndIsOpen = useAppSelector((reduxStore) => reduxStore.modal.modalEnd);
 
   const [radioInputValue, setRadioInputValue] = useState('');
-  // const [activeSymbolClass, setActiveSymbolClass] = useState();
+  const [activeSymbolClass, setActiveSymbolClass] = useState<boolean>();
 
   const filteredSymbol = symbols.filter((item, index) => index === randomIndex);
 
@@ -105,6 +105,8 @@ const App = () => {
   const playGame = () => {
     generateIndex();
     setPlayerChoice(radioInputValue);
+    setRadioInputValue('');
+    setActiveSymbolClass(false);
     setGamesPlayed();
   };
 
@@ -149,7 +151,7 @@ const App = () => {
             <div
               key={pcChoice.name}
             >
-              <img src={pcChoice.image} alt="{item}" height="125px" className="chosen-symbol" />
+              <img src={pcChoice.image} alt="{item}" className="chosen-symbol chosen-symbol--pc" />
             </div>
             )}
           </div>
@@ -158,16 +160,18 @@ const App = () => {
               <div
                 key={item.name}
                 // @ts-ignore
+                checked={activeSymbolClass}
                 value={radioInputValue}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => {
                   setRadioInputValue(e.target.value);
+                  setActiveSymbolClass(e.target.checked);
                 }}
               >
                 <div>
                   <label>
                     <input type="radio" name="symbol" value={item.name} className="radio" />
                     <div className="symbol-container">
-                      <img src={item.image} alt="{item}" className="chosenSymbol" />
+                      <img src={item.image} alt="{item}" className={(item.name === radioInputValue && activeSymbolClass) ? 'chosen-symbol chosen-symbol--active' : 'chosen-symbol'} />
                     </div>
                   </label>
                 </div>
@@ -185,7 +189,6 @@ const App = () => {
         </Button>
         {modalStartIsOpen && (<ModalStart />)}
         {modalEndIsOpen && (<ModalEnd />)}
-
       </div>
     </div>
   );
