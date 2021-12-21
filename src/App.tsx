@@ -105,8 +105,6 @@ const App = () => {
   const playGame = () => {
     generateIndex();
     setPlayerChoice(radioInputValue);
-    setRadioInputValue('');
-    setActiveSymbolClass(false);
     setGamesPlayed();
   };
 

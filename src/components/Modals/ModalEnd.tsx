@@ -39,8 +39,16 @@ const ModalEnd = () => {
           Yeah, sure
         </Button>
         <div className="credits">
-          <span>Icon credits: https://github.com/JLChamberlain/RPSLS</span>
-          <span>Character credits: http://www.cescgrane.com</span>
+          <span>
+            Icon credits:
+            {' '}
+            <a href="https://github.com/JLChamberlain/RPSLS" target="_blank" className="link" rel="noreferrer">https://github.com/JLChamberlain/RPSLS</a>
+          </span>
+          <span>
+            Character credits:
+            {' '}
+            <a href="http://www.cescgrane.com" target="_blank" className="link" rel="noreferrer">http://www.cescgrane.com</a>
+          </span>
         </div>
       </div>
     </div>
