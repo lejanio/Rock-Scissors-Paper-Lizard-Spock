@@ -3,6 +3,7 @@
 .App {
   text-align: center;
   background-image: url('http://localhost:3000/background_1.png' );
+  background-size: cover;
   font-family: 'BioRhyme', serif;
 }
 
@@ -52,6 +53,12 @@
   justify-content: space-between;
 }
 
+.competitor-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #FFE400;
+}
+
 .hero-section {
   display: grid;
   grid-template-columns: 1fr;
@@ -60,11 +67,22 @@
   margin-left: 20px;
   margin-top: 10px;
   gap: 5px;
-  color: #FFE400;
+}
+
+.pc-section {
+  display: grid;
+  justify-content: right;
+  margin-right: 20px;
+  margin-top: 10px;
+  gap: 5px;
 }
 
 .hero-section--name {
   padding-left: 10px;
+}
+
+.pc-section--name {
+  padding-right: 10px;
 }
 
 .radio {
@@ -74,7 +92,6 @@
 .symbols {
   display: flex;
   justify-content: center;
-  //padding: 20px;
   gap: 60px;
 }
 
@@ -86,7 +103,7 @@
 }
 
 .chosenSymbol {
-  height: 125px;
+  height: 100px;
   border-radius: 50%;
   transition: box-shadow 0.2s;
 
@@ -96,7 +113,7 @@
 
   &:active {
     transition: height 0.2s;
-    height: 135px;
+    height: 130px;
   }
 }
 
@@ -121,9 +138,14 @@
   top: -10%;
   right: -40%;
   width: auto;
-  //horizon: -500%;
-    //height: 200px;
-    //border-radius: 55%;
-    //box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    //opacity: 1;
+}
+
+.pc-image {
+  display: inline;
+  margin: 0 auto;
+  height: 120%;
+  position: absolute;
+  top: -7%;
+  right: -93%;
+  width: auto;
 }

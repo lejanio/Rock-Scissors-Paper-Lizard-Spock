@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../state/hooks';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import './ModalStart.scss';
-import { changeModalVisibility } from '../state/reducers/modalSlice';
-import { setPlayerCharacter } from '../state/reducers/gameSlice';
+import { changeModalStartVisibility } from '../../state/reducers/modalSlice';
+import { setPlayerCharacter } from '../../state/reducers/gameSlice';
 
 export type CharacterType = {
   name: string,
@@ -10,13 +10,13 @@ export type CharacterType = {
 }
 
 const ModalStart = () => {
-  const modalIsOpen = useAppSelector((reduxStore) => reduxStore.modal);
+  const modalIsOpen = useAppSelector((reduxStore) => reduxStore.modal.modalStart);
   const gameCharacters = useAppSelector((reduxStore) => reduxStore.game.characters);
   const chosenCharacter = useAppSelector((reduxStore) => reduxStore.game.playerCharacter);
   const dispatch = useAppDispatch();
 
-  const closeFormModalHandler = () => {
-    dispatch(changeModalVisibility(false));
+  const closeModalHandler = () => {
+    dispatch(changeModalStartVisibility(false));
   };
 
   const setCharacter = (value: CharacterType) => {
@@ -30,10 +30,8 @@ const ModalStart = () => {
       <div className="modal__content-one">
         <h1 className="heading">
           <span className="heading--introduction">
-            Hello and welcome to the game
+            Hello and welcome to the game of
             {' '}
-            <br />
-            of
           </span>
           <div>Rock, Paper, Scissors, Lizard, Spock</div>
 
@@ -41,9 +39,8 @@ const ModalStart = () => {
       </div>
       <div
         className="modal__content-two"
-        onClick={(e) => e.stopPropagation()}
       >
-        <p className="paragraph">
+        <section className="paragraph">
           The rules are simple:
           <br />
           <br />
@@ -55,10 +52,7 @@ const ModalStart = () => {
           </p>
           <br />
           But you don&#39;t have to memorize them - if you win, we&#39;ll tell you.
-          {' '}
-          <br />
-          <br />
-        </p>
+        </section>
       </div>
       <div className="modal__content-three">
         <p>
@@ -71,8 +65,7 @@ const ModalStart = () => {
               className="character"
               onClick={() => {
                 setCharacter(item);
-                closeFormModalHandler();
-                console.log('chosenCharacter', chosenCharacter);
+                closeModalHandler();
               }}
             >
               <img src={item.image} alt={item.name} className="character-image" />

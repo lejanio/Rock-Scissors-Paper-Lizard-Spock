@@ -3,10 +3,18 @@ import logo from './logo.svg';
 import './App.scss';
 import { useAppSelector, useAppDispatch } from './state/hooks';
 import {
-  generateRandomIndex, setComputerChoice, setParticipantChoice, incrementPlayerScore, incrementComputerScore,
+  generateRandomIndex,
+  setComputerChoice,
+  setParticipantChoice,
+  incrementPlayerScore,
+  incrementComputerScore,
+  incrementGamesPlayedCounter,
 } from './state/reducers/gameSlice';
-import { changeModalVisibility } from './state/reducers/modalSlice';
-import ModalStart from './Modal/ModalStart';
+import ModalStart from './components/Modals/ModalStart';
+import Button from './components/Button/Button';
+import pcPicture from './assets/pc.png';
+import { changeModalEndVisibility } from './state/reducers/modalSlice';
+import ModalEnd from './components/Modals/ModalEnd';
 
 export type FilteredSymbolType = {
   name: string,
@@ -19,16 +27,17 @@ const App = () => {
   const score = useAppSelector((reduxState) => reduxState.game.score);
   const participantChoice = useAppSelector((reduxState) => reduxState.game.participantChoice);
   const pcChoice = useAppSelector((reduxState) => reduxState.game.computerChoice);
-  const modalIsOpen = useAppSelector((reduxState) => reduxState.modal);
+  const modalStartIsOpen = useAppSelector((reduxState) => reduxState.modal.modalStart);
   const chosenCharacter = useAppSelector((reduxStore) => reduxStore.game.playerCharacter);
+  const gamesPlayed = useAppSelector((reduxStore) => reduxStore.game.gamesPlayedCounter);
+  const modalEndIsOpen = useAppSelector((reduxStore) => reduxStore.modal.modalEnd);
 
   const [radioInputValue, setRadioInputValue] = useState('');
+  // const [activeSymbolClass, setActiveSymbolClass] = useState();
 
   const filteredSymbol = symbols.filter((item, index) => index === randomIndex);
 
   const dispatch = useAppDispatch();
-
-  console.log('chosenCharacter', chosenCharacter);
 
   const generateIndex = () => {
     dispatch(generateRandomIndex());
@@ -48,6 +57,14 @@ const App = () => {
 
   const increaseComputerScore = () => {
     dispatch(incrementComputerScore());
+  };
+
+  const setGamesPlayed = () => {
+    dispatch(incrementGamesPlayedCounter());
+  };
+
+  const setModalEndVisible = (value: boolean) => {
+    dispatch(changeModalEndVisibility(value));
   };
 
   useEffect(() => {
@@ -77,12 +94,18 @@ const App = () => {
         increaseComputerScore();
       }
     }
-  }, [participantChoice]);
+  }, [gamesPlayed]);
+
+  useEffect(() => {
+    if (score.player >= 3 || score.computer >= 3) {
+      setModalEndVisible(true);
+    }
+  }, [score]);
 
   const playGame = () => {
     generateIndex();
     setPlayerChoice(radioInputValue);
-    setRadioInputValue(radioInputValue);
+    setGamesPlayed();
   };
 
   return (
@@ -90,7 +113,6 @@ const App = () => {
       <div className="App-container">
         <div>
           <div>
-
             <div className="header">
               <div className="score">
                 <div>
@@ -105,17 +127,23 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <div className="hero-section">
-              <div className="character-image--cropper">
-                <img src={chosenCharacter.image} alt={chosenCharacter.name} className="chosen-character-image" />
+            <div className="competitor-section">
+              <div className="hero-section">
+                <div className="character-image--cropper">
+                  <img src={chosenCharacter.image} alt={chosenCharacter.name} className="chosen-character-image" />
+                </div>
+                <div className="hero-section--name">{chosenCharacter.name}</div>
               </div>
-              <div className="hero-section--name">{chosenCharacter.name}</div>
+              <div className="pc-section">
+                <div className="character-image--cropper">
+                  <img src={pcPicture} alt="pc" className="pc-image" />
+                </div>
+                <div className="pc-section--name">
+                  Hal
+                </div>
+              </div>
             </div>
-
           </div>
-          <br />
-          <br />
-
           <div className="symbols">
             {pcChoice !== undefined && (
             <div
@@ -134,7 +162,6 @@ const App = () => {
                 onChange={(e:ChangeEvent<HTMLInputElement>) => {
                   setRadioInputValue(e.target.value);
                 }}
-                onClick={playGame}
               >
                 <div>
                   <label>
@@ -147,15 +174,18 @@ const App = () => {
               </div>
             ))}
           </div>
-          {score.player >= 3 && (
-            <div>You wins! Congrats!</div>
-          )}
-          {score.computer >= 3 && (
-            <div>You loses!</div>
-          )}
         </div>
-        {/* <button onClick={playGame}> Click me </button> */}
-        {modalIsOpen && (<ModalStart />)}
+        <Button
+          backgroundColor="#C3073F"
+          onClick={() => {
+            playGame();
+          }}
+        >
+          Battle!
+        </Button>
+        {modalStartIsOpen && (<ModalStart />)}
+        {modalEndIsOpen && (<ModalEnd />)}
+
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ import characterFive from '../../assets/chars/char_05.jpg';
 import { FilteredSymbolType } from '../../App';
 
 type GameState = {
+  gamesPlayedCounter: number,
   characters:
     {
       id: number,
@@ -41,6 +42,7 @@ type GameState = {
 }
 
 const initialState: GameState = {
+  gamesPlayedCounter: 0,
   characters: [
     {
       id: 1,
@@ -107,6 +109,9 @@ export const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
+    incrementGamesPlayedCounter: (state) => {
+      state.gamesPlayedCounter += 1;
+    },
     setPlayerCharacter: (state, action) => {
       state.playerCharacter = action.payload;
     },
@@ -116,10 +121,10 @@ export const gameSlice = createSlice({
     incrementComputerScore: (state) => {
       state.score.computer += 1;
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload;
-    // },
+    resetScore: (state) => {
+      state.score.computer = 0;
+      state.score.player = 0;
+    },
     generateRandomIndex: (state) => {
       const newRandomIndex = Math.floor(Math.random() * state.symbols.length);
       state.randomIndex = newRandomIndex;
@@ -136,5 +141,6 @@ export const gameSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { reducer } = gameSlice;
 export const {
-  setPlayerCharacter, incrementPlayerScore, incrementComputerScore, generateRandomIndex, setParticipantChoice, setComputerChoice,
+  incrementGamesPlayedCounter, setPlayerCharacter, incrementPlayerScore,
+  incrementComputerScore, resetScore, generateRandomIndex, setParticipantChoice, setComputerChoice,
 } = gameSlice.actions;
