@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Rock-Scissors-Paper-Lizard-Spock/static/css/main.fc8a8d7f.chunk.css",
+    "main.js": "/Rock-Scissors-Paper-Lizard-Spock/static/js/main.0b59de5b.chunk.js",
+    "main.js.map": "/Rock-Scissors-Paper-Lizard-Spock/static/js/main.0b59de5b.chunk.js.map",
+    "runtime-main.js": "/Rock-Scissors-Paper-Lizard-Spock/static/js/runtime-main.72361a40.js",
+    "runtime-main.js.map": "/Rock-Scissors-Paper-Lizard-Spock/static/js/runtime-main.72361a40.js.map",
+    "static/js/2.e00dee44.chunk.js": "/Rock-Scissors-Paper-Lizard-Spock/static/js/2.e00dee44.chunk.js",
+    "static/js/2.e00dee44.chunk.js.map": "/Rock-Scissors-Paper-Lizard-Spock/static/js/2.e00dee44.chunk.js.map",
+    "static/js/3.0ae9758a.chunk.js": "/Rock-Scissors-Paper-Lizard-Spock/static/js/3.0ae9758a.chunk.js",
+    "static/js/3.0ae9758a.chunk.js.map": "/Rock-Scissors-Paper-Lizard-Spock/static/js/3.0ae9758a.chunk.js.map",
+    "index.html": "/Rock-Scissors-Paper-Lizard-Spock/index.html",
+    "static/css/main.fc8a8d7f.chunk.css.map": "/Rock-Scissors-Paper-Lizard-Spock/static/css/main.fc8a8d7f.chunk.css.map",
+    "static/js/2.e00dee44.chunk.js.LICENSE.txt": "/Rock-Scissors-Paper-Lizard-Spock/static/js/2.e00dee44.chunk.js.LICENSE.txt",
+    "static/media/Lizard.1251d61e.svg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/Lizard.1251d61e.svg",
+    "static/media/Paper.58cbc834.svg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/Paper.58cbc834.svg",
+    "static/media/Rock.019d06b3.svg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/Rock.019d06b3.svg",
+    "static/media/Scissors.a9ff850e.svg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/Scissors.a9ff850e.svg",
+    "static/media/Spock.de13e597.svg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/Spock.de13e597.svg",
+    "static/media/char_01.903b9ead.jpg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/char_01.903b9ead.jpg",
+    "static/media/char_02.4623564b.jpg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/char_02.4623564b.jpg",
+    "static/media/char_03.ad864220.jpg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/char_03.ad864220.jpg",
+    "static/media/char_04.1d107df3.jpg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/char_04.1d107df3.jpg",
+    "static/media/char_05.0dfe79c4.jpg": "/Rock-Scissors-Paper-Lizard-Spock/static/media/char_05.0dfe79c4.jpg",
+    "static/media/pc.7b2f431c.png": "/Rock-Scissors-Paper-Lizard-Spock/static/media/pc.7b2f431c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72361a40.js",
+    "static/js/2.e00dee44.chunk.js",
+    "static/css/main.fc8a8d7f.chunk.css",
+    "static/js/main.0b59de5b.chunk.js"
+  ]
+}
