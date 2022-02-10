@@ -1,7 +1,5 @@
 # Rock, Scissors, Paper, Lizard, Spock App
 
-A working project can be found here: https://lejanio.github.io/Rock-Scissors-Paper-Lizard-Spock
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
