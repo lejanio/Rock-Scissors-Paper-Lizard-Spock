@@ -28,6 +28,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "linebreak-style": "off",
         "jsx-a11y/label-has-associated-control": "off",
         "no-use-before-define": "off",
         "no-param-reassign": "off",
