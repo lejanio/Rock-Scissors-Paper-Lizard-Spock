@@ -1,5 +1,17 @@
 # Rock, Scissors, Paper, Lizard, Spock App
 
+A working project can be found here: https://lejanio.github.io/Rock-Scissors-Paper-Lizard-Spock
+
+![RPSLS](rspls_demo.gif)
+
+## General description
+
+This is my version of the good old Rock, Paper, Scissors game, but with an addition of two more symbols - Lizard 
+and Spock. So theoretically it should reduce the probability of competitors showing the same sign, unless, of course, 
+they all are Star Trek fans).
+
+The game is implemented using React (with Redux) and Typescript.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -7,6 +19,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install the necessary project dependencies.
 
 ### `npm start`
 
